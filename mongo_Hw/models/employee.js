@@ -7,6 +7,7 @@ const Employee_address = new Schema({
     city: {type: String, required: true },
     state: {type: String, required: true },
     zip: {type: String, required: true },
+    _id: {type:String,required:false},
 
 
 })

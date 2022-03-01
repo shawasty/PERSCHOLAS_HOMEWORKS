@@ -18,8 +18,8 @@ const main = async ()=> {
                 street : '5th Ave',
                 city:'New York',
                 state:'NY',
-                zip: '10010'
-                }
+                zip: '10010'}
+                
         },
         {
             first_name: 'Godfred',

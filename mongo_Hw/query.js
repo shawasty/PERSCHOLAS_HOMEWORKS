@@ -103,14 +103,21 @@ const deleteEmployee = async () => {
     const deleted = await Employee.deleteOne({ first_name: "Godfred" })
     console.log(deleted)
   }
-
+const employeeFullName = async () => {
+    const employeeName = await Employee.find ({}, {_id: false, first_name : true, last_name: true});
+    for (let i= 0; i < employeeName; i++){
+        console.log((employeeName[i].first_name) + ' ' + (employeeName[i].last_name));
+    }
+    console.log(employeeName)
+}
 
 const run = async() => {
-    await findEmployees()
+    // await findEmployees()
     // await createOneEmployee()
     // await createThreeEmployee()
     // await updateEmployee()
     // await deleteEmployee()
+    await employeeFullName()
     db.close()
   }
   

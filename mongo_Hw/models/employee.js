@@ -19,6 +19,7 @@ const Employee = new Schema (
         email: {type: String, required: true },
         job_title:{ type : String, required: true},
         address : [Employee_address]
+        
     },
     {timestamps:true}
 

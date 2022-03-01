@@ -30,6 +30,7 @@ const createOneEmployee = async () => {
     console.log('created a new Employee:',oneEmployee) 
 }
 
+// create three employees
 const createThreeEmployee = async () => {
     const threeEmployees = await Employee.insertMany([
         {
@@ -73,6 +74,35 @@ const createThreeEmployee = async () => {
     console.log('created three new Employees:',threeEmployees) 
 }
 
+//update one employee
+
+const updateEmployee = async () => {
+    const updated = await Employee.updateOne(
+        {
+            first_name: 'Nana',
+            last_name: 'Asamoah',
+
+        },
+        {
+        first_name: 'Akwasi',
+        last_name: 'Amankwah',
+        email: 'nana@gmail.com',
+        job_title: 'Economist',
+        address: {
+            street : 'convent Ave',
+            city:'Bronx',
+            state:'NY',
+            zip: '10010'
+            }
+           
+    })
+    console.log(updated) 
+}
+
+const deleteEmployee = async () => {
+    const deleted = await Employee.deleteOne({ first_name: "Godfred" })
+    console.log(deleted)
+  }
 
 
 const run = async() => {
